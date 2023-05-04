@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema({
       required: [true, "url is required"],
     },
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 
   resetPasswordToken: String,
   resetPasswordExpire: Date,
@@ -72,7 +76,7 @@ userSchema.methods.passwordResetToken = function () {
     .update(resetToken)
     .digest("hex");
 
-    this.resetPasswordExpire= Date.now() + 15*60*1000;
+    this.resetPasswordExpire = Date.now() + 15 * 60 * 1000;
     return resetToken;
 };
 
