@@ -28,6 +28,7 @@ import Shipping from "./components/Cart/Shipping.js";
 import Payment from "./components/Cart/Payment.js";
 import MyOrders from "./components/Order/MyOrders.js";
 import OrderSuccess from "./components/Cart/OrderSuccess.js";
+
 import ConfirmOrder from "./components/Cart/ConfirmOrder.js";
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -73,6 +74,8 @@ function App() {
         <Protected exact path="/order/confirm" component={ConfirmOrder} />
         <Protected exact path="/orders" component={MyOrders} />
         <Protected exact path="/success" component={OrderSuccess} />
+        
+        
         
         <Route exact path="/login" component={LoginSignUp} />
       

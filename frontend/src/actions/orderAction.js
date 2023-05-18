@@ -50,7 +50,7 @@ import {
   
       const { data } = await axios.get("/api/order");
   
-      dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
+      dispatch({ type: MY_ORDERS_SUCCESS, payload: data.order });
     } catch (error) {
       dispatch({
         type: MY_ORDERS_FAIL,
@@ -116,21 +116,21 @@ import {
 //     }
 //   };
   
-//   // Get Order Details
-//   export const getOrderDetails = (id) => async (dispatch) => {
-//     try {
-//       dispatch({ type: ORDER_DETAILS_REQUEST });
+  // Get Order Details
+  export const getOrderDetails = (id) => async (dispatch) => {
+    try {
+      dispatch({ type: ORDER_DETAILS_REQUEST });
   
-//       const { data } = await axios.get(`/api/v1/order/${id}`);
+      const { data } = await axios.get(`/api/order/${id}`);
   
-//       dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
-//     } catch (error) {
-//       dispatch({
-//         type: ORDER_DETAILS_FAIL,
-//         payload: error.response.data.message,
-//       });
-//     }
-//   };
+      dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
+    } catch (error) {
+      dispatch({
+        type: ORDER_DETAILS_FAIL,
+        payload: error.response.data.message,
+      });
+    }
+  };
   
   // Clearing Errors
   export const clearErrors = () => async (dispatch) => {

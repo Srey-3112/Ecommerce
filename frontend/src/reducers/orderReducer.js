@@ -162,32 +162,32 @@ import {
 //     }
 //   };
   
-//   export const orderDetailsReducer = (state = { order: {} }, action) => {
-//     switch (action.type) {
-//       case ORDER_DETAILS_REQUEST:
-//         return {
-//           loading: true,
-//         };
+  export const orderDetailsReducer = (state = { order: {} }, action) => {
+    switch (action.type) {
+      case ORDER_DETAILS_REQUEST:
+        return {
+          loading: true,
+        };
   
-//       case ORDER_DETAILS_SUCCESS:
-//         return {
-//           loading: false,
-//           order: action.payload,
-//         };
+      case ORDER_DETAILS_SUCCESS:
+        return {
+          loading: false,
+          order: action.payload,
+        };
   
-//       case ORDER_DETAILS_FAIL:
-//         return {
-//           loading: false,
-//           error: action.payload,
-//         };
-//       case CLEAR_ERRORS:
-//         return {
-//           ...state,
-//           error: null,
-//         };
+      case ORDER_DETAILS_FAIL:
+        return {
+          loading: false,
+          error: action.payload,
+        };
+      case CLEAR_ERRORS:
+        return {
+          ...state,
+          error: null,
+        };
   
-//       default:
-//         return state;
-//     }
-//   };
+      default:
+        return state;
+    }
+  };
   

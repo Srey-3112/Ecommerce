@@ -20,6 +20,7 @@ const MyOrders = () => {
 
   const columns = [
     { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    ,
 
     {
       field: "status",
@@ -48,27 +49,14 @@ const MyOrders = () => {
       flex: 0.5,
     },
 
-    {
-      field: "actions",
-      flex: 0.3,
-      headerName: "Actions",
-      minWidth: 150,
-      type: "number",
-      sortable: false,
-      renderCell: (params) => {
-        return (
-          <Link to={`/order/${params.getValue(params.id, "id")}`}>
-            <LaunchIcon />
-          </Link>
-        );
-      },
-    },
+    
   ];
   const rows = [];
 
   orders &&
     orders.forEach((item, index) => {
       rows.push({
+        
         itemsQty: item.orderItems.length,
         id: item._id,
         status: item.orderStatus,
